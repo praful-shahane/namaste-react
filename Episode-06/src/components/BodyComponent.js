@@ -31,7 +31,7 @@ console.log("Body rendered...");
      //Using async await way of writing function
   const fetchData =async ()=>{
        const data = await fetch(
-        "https://corsproxy.io/?url=https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.14630&lng=79.08490&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.14630&lng=79.08490&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
         //get JsON from the response object
       const jsonData= await data.json();
@@ -39,10 +39,10 @@ console.log("Body rendered...");
       //set the data which we fetch from API to the local state variable
 
       //Optional Chaining Operator (?.) is used to avoid runtime errors if any property is undefined or null.
-      setListOfRestaurant(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setListOfRestaurant(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
       //when we fetch the data from API, we have to set the filtered restaurant list also.
-      setFilteredRestaurants(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+      setFilteredRestaurants(jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
 
 
@@ -76,14 +76,18 @@ console.log("Body rendered...");
             <input  type="text"  className="search-box"  value={searchText} 
               onChange={ (e)=>{
                    setSearchText(e.target.value);
-              }} />
+              }}
+            />
              <button
-             onClick={()=>{ //Filter the restaurant cards & update the UI.  //we need searchText here ignore case.
+             onClick={()=>{
+                //Filter the restaurant cards & update the UI.
+                //we need searchText here ignore case.
 const filterRestaurantList=listOfRestaurants.filter(res=>
  res.info.name.toLowerCase().includes(searchText.toLowerCase())
 );    
 //update the restaurant list by filtered restaurant list.
- setFilteredRestaurants(filterRestaurantList); }}
+ setFilteredRestaurants(filterRestaurantList);
+              }}
              >search</button>
         </div>
         <button className="filter-btn" onClick={()=>{
@@ -94,8 +98,8 @@ const filterRestaurantList=listOfRestaurants.filter(res=>
         >Top Rated Restaurants</button>
        </div>
        <div className="res-container"> 
-      {filteredRestaurants.map((restaurant)=>
-      ( <RestaturantCardComponent  key={restaurant.info.id} resData={restaurant} />
+      {filteredRestaurants.map((restaurant,index)=>
+      ( <RestaturantCardComponent  key={index} resData={restaurant} />
       ))}
       </div>
       </div>
