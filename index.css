@@ -1,4 +1,8 @@
+@import "tailwindcss";
 
+
+
+/* 
 #heading {
     color: red;
 }
@@ -34,7 +38,8 @@
 /* 
 after hover on the card border will be black
 & cursor will be pointer
-*/
+/* */
+/*
 .res-card:hover{
     cursor: pointer;
       border: 1px solid black;
@@ -85,4 +90,4 @@ after hover on the card border will be black
 .user-card{
     padding: 10px;
     border: 1px solid black;
-}
+} */ 

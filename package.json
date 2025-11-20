@@ -26,9 +26,11 @@
     "parcel": "^2.16.0"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.17",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-router-dom": "^7.9.5"
+    "react-router-dom": "^7.9.5",
+    "tailwindcss": "^4.1.17"
   },
   "browserslist": [
     "last 2 Chrome version",
