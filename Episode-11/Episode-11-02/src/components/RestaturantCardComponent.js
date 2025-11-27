@@ -1,14 +1,7 @@
 import { CDN_URL } from "../utils/constants";
-import { useContext } from "react";
-import UserContext from "../utils/UserContext";
 
 const RestaturantCardComponent =(props)=>{
     const {resData} =props;  //restData is an key which we need to map with restaurantList array of objects
-
-
-         const data = useContext(UserContext);
-         console.log(data);
-         
        
     //Destructuring of our object
     // const cloudinaryImageId = resData.info.cloudinaryImageId;
@@ -35,7 +28,6 @@ const RestaturantCardComponent =(props)=>{
       <h4>{avgRating}</h4>
       <h4>{costForTwo}</h4>
       <h4>{resData.info.sla.deliveryTime} Minutes</h4>
-      <h4> User : {data.loggedInUser}</h4>
       </div>
     );
   };

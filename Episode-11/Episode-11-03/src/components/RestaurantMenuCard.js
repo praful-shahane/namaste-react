@@ -15,8 +15,6 @@ So, we have to provide empty dependency array.
 const {resId,resName}= useParams();  //destructuring to get resId,resName directly.
 console.log(resId,resName); //resId=nagpur resName=veeraswami-sadar
 
-const dummy= "Dummy Data";
-
     const resInfo= useRestaurantMenu(resId,resName);  //calling custom hook useRestaurantMenu and passing resId,resName as input
 
       const [showIndex,setShowIndex]= useState(0);//to control which category to show items for bydefault showing items for first category
@@ -56,7 +54,6 @@ const dummy= "Dummy Data";
                         //example: if we click on 2nd category, it will set showIndex to 1 in parent component
                         // so, only items for 2nd category will be shown
                         setShowIndexToShowCategory={()=>setShowIndex(index)}
-                        dummy={dummy}
                          />
              ))} 
         </div>

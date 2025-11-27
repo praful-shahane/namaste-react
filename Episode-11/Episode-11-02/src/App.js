@@ -1,4 +1,4 @@
-  import React, { lazy, Suspense, useEffect, useState } from "react";
+  import React, { lazy, Suspense } from "react";
   import ReactDOM from "react-dom/client";
   import HeaderComponent from "./components/HeaderComponent" 
   // we can write extension as well  import HeaderComponent from "./components/HeaderComponent.js"
@@ -10,7 +10,6 @@
   import Contact from "./components/Contact";
 import Error from "./components/Error";
 //import Grocery from "./components/Grocery";
-import  UserContext from "./utils/UserContext";
 
 
 //lazy is function which takes function as an argument which returns a dynamic import.
@@ -24,30 +23,15 @@ const About = lazy(()=>import( "./components/About"));
 const AppLayOut =()=>{
 
     console.log(<BodyComponent />);
-
-           const [userName,setUserName]= useState();
-       //Authetication code written to identify the user
-        useEffect(()=>{
-           //Make API call to get the user info by sending userName & password
-           const data={
-            name:"Praful Shahane"
-           }
-
-           setUserName(data.name);
-           
-        },[]);
-
-           
-  const datanew="Data User";
     
   return (
-    <UserContext.Provider value={{loggedInUser : userName,setUserName , datanew}} >
   <div className="app">
     <HeaderComponent />
+  {/** How to load Component based on path, react Router DOM comes to rescue.
+   * it gives us something like Outlet. 
+   * Outlet will load the component based on the path we provide in the URL. */}
     <Outlet />
-  </div>
-        </UserContext.Provider>
-);
+  </div>);
 };
 
 /**

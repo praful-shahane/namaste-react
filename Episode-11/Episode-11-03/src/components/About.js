@@ -1,8 +1,6 @@
 import User from "./User";
 import Userclass from "./UserClass";
 import {Component} from "react";
-// import UserContext from "../utils/UserContext";
-import UserContext from "../utils/UserContext";
 
 class About extends Component {
 
@@ -21,16 +19,6 @@ class About extends Component {
         return(
              <div>
             <h1>About Us Page</h1>
-            <div>
-                Logged in User is : <UserContext.Consumer>
-                    { 
-                    // to access context value use function which returns data
-                    //it is callback function which receives context value as argument
-                        ({loggedInUser})=>  <h1 className="text-xl font-bold" >{loggedInUser}</h1>
-                         
-                    }
-                </UserContext.Consumer>
-            </div>
             <p>This is Namaste React Live Course 2023</p>
             <p>We are learning React JS</p>
                 <User name={"First"}/>

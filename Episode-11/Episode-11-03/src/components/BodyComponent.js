@@ -1,11 +1,10 @@
  import React from "react";  //Default Import
 import ReactDOM from "react-dom/client";
  import RestaturantCardComponent, {withDiscountRestaurantMenuCard} from "./RestaturantCardComponent" ;
-import {useState, useEffect ,useContext} from "react";  //Named Import
+import {useState, useEffect } from "react";  //Named Import
 import ShimmerComponet from "./ShimmerComponent";
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/UserContext";
  
  const BodyComponent =()=>{
     //Local State Variable  in React
@@ -22,6 +21,20 @@ console.log(listOfRestaurants);
 //created a new component RestaurantMenuCardWithDiscount using Higher Order Component
 const RestaurantMenuCardWithDiscount= withDiscountRestaurantMenuCard(RestaturantCardComponent);
 
+
+// // not good practice to create state variable inside conditional block
+//   if(true){ 
+//   const[searchText, setSearchText]= useState(""); //Local State Variable for search box
+//   }
+
+// // Do not create state variable inside function or loop or conditional block
+//    function test(){
+//        const[searchText, setSearchText]= useState(""); //Local State Variable for search box
+//    }
+
+//     for(let i=0;i<10;i++){
+//       const[searchText, setSearchText]= useState(""); //Local State Variable for search box
+//     }
 
 
      /*
@@ -58,19 +71,35 @@ const RestaurantMenuCardWithDiscount= withDiscountRestaurantMenuCard(Restaturant
 };
 
 
+/*
+
+     //Traditional way of writing function in Javascript
+     //Pure Javascript function to fetch data from API
+     const fetchData1 = ()=>{
+      //fetch is given by browser to make API calls. not by Javascript.
+      //fetch always returns a promise.
+      const data = fetch(
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.14630&lng=79.08490&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      );
+     };
+*/
+
+
+ // listOfRestaurants is empty array initially. So, we will show loading....
+ //  until the data is fetched from API and set to the local state variable.
+
+ //This  is Conditional Rendering concept.
+ //Rendering on the basis of condition is conditional rendering.
+  //  if(listOfRestaurants.length===0){
+  //   return <ShimmerComponet />;  
+  //  }
+
       const onlineStatus= useOnlineStatus();
       if(onlineStatus===false){
         return( <h1>
           🔴 Offline, Please check your internet connection!!
           </h1>);
       }
-         
-      const data= useContext(UserContext);
-      console.log(data);
-      
-      const { loggedInUser,setUserName } = useContext(UserContext);
-      console.log(loggedInUser,setUserName);
-      
 
     return     listOfRestaurants.length===0 ? <ShimmerComponet/> : (
       <div className="body"> 
@@ -99,11 +128,6 @@ const filterRestaurantList=listOfRestaurants.filter(res=>
         >Top Rated Restaurants</button>
      </div>
        
-     <div className="flex m-4 p-4">
-      <label>UserName : </label>
-      <input className="border border-black p-2" value={loggedInUser} onChange={(e)=> setUserName(e.target.value)} />
-     </div>
-
        </div>
        <div className="mx-4 px-4 flex flex-wrap"> 
       {filteredRestaurants.map((restaurant)=>
