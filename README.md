@@ -29,4 +29,17 @@ Footer Component
    (it is Normal JS utility functions. 
    Facebook developer wrote this function inside the React)
 
+
+  # Redux Toolkit
+    -STEPS
+    ---------------
+    - Install @reduxjs/toolkit +  react-redux
+    -Build our own store.
+    -Connect our store to our app.
+    -Create slice(Cart slice)
+    -dispatch(action)
+    -Selector
+    
+
+
    
