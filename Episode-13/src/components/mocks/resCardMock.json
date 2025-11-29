@@ -1,0 +1,88 @@
+{
+    "info": {
+        "id": "739169",
+        "name": "Olio - The Wood Fired Pizzeria",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2025/11/24/64bcb1b4-acb0-466d-8347-71cbbe4efb65_739169.JPG",
+        "locality": "Behind Indusind Bank",
+        "areaName": "Near Lendra Park",
+        "costForTwo": "₹300 for two",
+        "cuisines": [
+            "Pizzas",
+            "Pastas",
+            "Italian",
+            "Fast Food",
+            "Snacks",
+            "Beverages",
+            "Desserts"
+        ],
+        "avgRating": 4.2,
+        "parentId": "11633",
+        "avgRatingString": "4.2",
+        "totalRatingsString": "1.8K+",
+        "sla": {
+            "deliveryTime": 31,
+            "lastMileTravel": 2.7,
+            "serviceability": "SERVICEABLE",
+            "slaString": "30-40 mins",
+            "lastMileTravelString": "2.7 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-11-30 05:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "newg.png",
+                    "description": "Gourmet"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "Gourmet",
+                                "imageId": "newg.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹119"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-a28979e4-57f0-441a-a98c-f14e8b9b688e"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/nagpur/olio-the-wood-fired-pizzeria-behind-indusind-bank-near-lendra-park-rest739169",
+        "type": "WEBLINK"
+    }
+}
